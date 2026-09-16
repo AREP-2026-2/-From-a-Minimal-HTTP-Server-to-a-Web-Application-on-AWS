@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Lab · Minimal HTTP Server</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <img src="/images/logo.png" alt="Lab logo" class="logo">
+        <div>
+            <h1>Minimal HTTP Server &mdash; Mini Web Application</h1>
+            <p class="subtitle">A sequential, socket-based Java server. One connection at a time, on purpose.</p>
+        </div>
+    </header>
+
+    <img src="/images/banner.jpg" alt="Server banner" class="banner">
+
+    <main>
+        <section class="card">
+            <h2>Greeting service</h2>
+            <form id="greet-form">
+                <label for="greet-name">Name</label>
+                <input id="greet-name" name="name" type="text" placeholder="e.g. Ada" required>
+                <button type="submit">Greet me</button>
+            </form>
+            <div id="greet-result" class="result" aria-live="polite"></div>
+            <div id="greet-error" class="error" aria-live="polite"></div>
+        </section>
+
+        <section class="card">
+            <h2>Square service</h2>
+            <form id="square-form">
+                <label for="square-value">Number</label>
+                <input id="square-value" name="value" type="number" step="any" placeholder="e.g. 7" required>
+                <button type="submit">Square it</button>
+            </form>
+            <div id="square-result" class="result" aria-live="polite"></div>
+            <div id="square-error" class="error" aria-live="polite"></div>
+        </section>
+
+        <section class="card">
+            <h2>Server time</h2>
+            <button id="time-button" type="button">Ask the server</button>
+            <div id="time-result" class="result" aria-live="polite"></div>
+            <div id="time-error" class="error" aria-live="polite"></div>
+        </section>
+
+        <section class="card">
+            <h2>Health check</h2>
+            <button id="health-button" type="button">Check health</button>
+            <div id="health-result" class="result" aria-live="polite"></div>
+            <div id="health-error" class="error" aria-live="polite"></div>
+        </section>
+
+        <section class="card test-only">
+            <h2>Test: simulate a slow request</h2>
+            <p class="hint">
+                For section 6.2 of the lab: open this page in two browser windows,
+                trigger this button in the first one, then immediately click any
+                other action in the second. The second window waits until the first
+                server-side request finishes &mdash; the server is sequential.
+            </p>
+            <button id="slow-button" type="button">Trigger 5s slow request</button>
+            <div id="slow-result" class="result" aria-live="polite"></div>
+            <div id="slow-error" class="error" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script src="/app.js"></script>
+</body>
+</html>
